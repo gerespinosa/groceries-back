@@ -7,7 +7,9 @@ const Item = new mongoose.Schema({
     },
     quantity: Number,
     checked: Boolean,
-    list: [String]
+    list: {
+        type: mongoose.Schema.Types.ObjectId,
+    }
 })
 
 export default mongoose.model('Item', Item)
