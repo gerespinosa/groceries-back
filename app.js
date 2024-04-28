@@ -5,6 +5,8 @@ import cors from 'cors';
 // Routes
 import userRoutes from './routes/user.routes.js';
 import accessRoutes from './routes/access.routes.js';
+import listRoutes from './routes/list.routes.js';
+
 
 const app = express();
 
@@ -20,5 +22,7 @@ app.use(cors({
 // Routes
 app.use('/', userRoutes) // USER
 app.use('/', accessRoutes) // ACCESS
+app.use('/', listRoutes) // LIST
+
 
 export default app
