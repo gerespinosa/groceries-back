@@ -14,10 +14,7 @@ export const login = async (req, res) => {
             if (isMatch) {
                 const token = await createAccessToken({ id: userFound._id })
                 res.cookie("token", token);
-                res.json({
-                    id: userFound._id,
-                    username: userFound.username
-                });
+                res.json({userFound});
             }
         } else {
             res.status(404).json({ message: "Administrador no encontrado" })

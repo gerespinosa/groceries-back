@@ -3,14 +3,14 @@ import { createList, getLists, getList, updateList, deleteList } from "../contro
 
 const router = Router();
 
-router.post('/lists/new/:userId', createList) // CREATE - POST
+router.post('/user/:userId/lists/new', createList) // CREATE - POST
 
 router.get('/lists/all', getLists) // READ - GET - ALL
 
-router.get('/lists/:listId', getList) // READ - GET - ONE
+router.get('/user/:userId/lists/:listId', getList) // READ - GET - ONE
 
-router.put('/lists/:listId', updateList) // UPDATE - PUT
+router.put('/user/:userId/lists/:listId', updateList) // UPDATE - PUT
 
-router.delete('/lists/:listId', deleteList) // DELETE - DELETE
+router.delete('/user/:userId/lists/:listId', deleteList) // DELETE - DELETE
 
 export default router
