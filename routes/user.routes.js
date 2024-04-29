@@ -5,10 +5,10 @@ const router = Router();
 
 router.post('/register', registerUser) // CREATE - REGISTER - POST
 
-router.get('/:userId', getUser) // READ - GET
+router.get('/user/:userId', getUser) // READ - GET
 
-router.put('/:userId', updateUser) // UPDATE - PUT
+router.put('/user/:userId', updateUser) // UPDATE - PUT
 
-router.delete('/:userId', deleteUser) // DELETE - DELETE
+router.delete('/user/:userId', deleteUser) // DELETE - DELETE
 
 export default router
