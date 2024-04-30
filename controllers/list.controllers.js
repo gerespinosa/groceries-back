@@ -40,6 +40,17 @@ export const getList = async (req, res) => {
     }
 }
 
+// READ - GET - ALL FROM USER
+export const getUserLists = async (req, res) => {
+    const userId = req.params.userId
+    try {
+        const lists = await List.find({ userId: userId })
+        res.status(200).send([lists])
+    } catch (error) {
+        res.status(400).send('Error al buscar las listas del usuario')
+    }
+}
+
 // UPDATE - PUT
 export const updateList = async (req, res) => {
     const listId = req.params.listId

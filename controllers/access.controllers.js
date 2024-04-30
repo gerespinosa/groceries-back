@@ -14,7 +14,7 @@ export const login = async (req, res) => {
             if (isMatch) {
                 const token = await createAccessToken({ id: userFound._id })
                 res.cookie("token", token);
-                res.json({userFound});
+                res.json({ userFound });
             }
         } else {
             res.status(404).json({ message: "Administrador no encontrado" })
@@ -28,7 +28,7 @@ export const login = async (req, res) => {
 export const logout = async (req, res) => {
     const token = req.cookies.token;
     if (token) {
-        res.clearCookie('token');
+        res.clearCookie('pollita');
         return res.send('Logout exitoso')
     }
 }
